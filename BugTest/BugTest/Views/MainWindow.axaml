@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BugTest.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="BugTest.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="BugTest">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel />
+	</Design.DataContext>
+	<DataGrid>
+		<DataGrid.ContextMenu>
+			<ContextMenu Name="DaContextMenu">
+
+				<MenuItem Header="(Selected Item)">
+					<MenuItem Header="Log" Command="{Binding SomeCommand}" />
+				</MenuItem>
+
+			</ContextMenu>
+		</DataGrid.ContextMenu>
+		<DataGrid.Columns>
+			<DataGridTextColumn Header="Header" />
+		</DataGrid.Columns>
+	</DataGrid>
+</Window>
